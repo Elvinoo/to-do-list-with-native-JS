@@ -31,14 +31,19 @@ h3 {
     text-align: right;
     margin-bottom:12px;
 }
+.sort-icon img{
+    cursor: pointer;
+}
 
 .to-do-list {
-    cursor: pointer;
     border: 1px solid #C4C4C4;
     padding: 10px 30px 10px 27px;
     border-radius: 10px;
     margin-bottom: 18px;
-   
+    display: none;
+}
+.to-do-list img{
+    cursor: pointer;
 }
 
 .to-do-list .task {
@@ -82,6 +87,8 @@ h3 {
 .task-input{
     margin-bottom: 18px;
     width: 100%;
+    position: relative;
+    
 }
 input{
     box-sizing: border-box;
@@ -90,5 +97,19 @@ input{
     border: 1px solid #C4C4C4;
     border-radius: 10px;
     width:100%;
+    padding-right: 50px;
+    
+}
+.task-input img{
+    position: absolute;
+    right: 30px;
+    top:10px;
+    cursor: pointer;
+}
 
+.arrow-up-gray,
+.arrow-up-black,
+.arrow-down-black
+{
+    display: none;
 }
