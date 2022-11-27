@@ -6,9 +6,18 @@ const inputImg=document.querySelector('.task-input img');
 const addButton=document.querySelector('.addToListButton');
 const taskList=document.querySelector('.task');
 const inputDiv=document.querySelector('.task-input');
+
+addButton.addEventListener('click',add);
+input.addEventListener('keyup',function(e){
+    if(e.key==='Enter'){
+        add();
+    }
+});
+
+
 let i=0;
-addButton.addEventListener('click',add)
 function add(){
+    
     let newTask=document.createElement('div');
     newTask.className='task';
     i++;

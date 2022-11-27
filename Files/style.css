@@ -98,6 +98,7 @@ input{
     border-radius: 10px;
     width:100%;
     padding-right: 50px;
+    padding-left:10px;
     
 }
 .task-input img{
