@@ -19,8 +19,9 @@ function add(){
     let newTask=document.createElement('div');
     newTask.className='task';
     newTask.innerHTML=
-    `<p>${i}) ${input.value}</p>
-    <img src="/files/delete-icon.svg" alt="cancel">
+    `<p class="tasks">${i}) ${input.value}</p>
+    <img class="gray" src="/files/delete-icon.svg" alt="cancel">
+    <img style="display: none;" class="violet" src="/files/cancel-blueviolet.svg" alt="cancel">
 `
     if(i==5){
         i--
@@ -39,15 +40,27 @@ function add(){
         inputDiv.style.display='block';
     }
     
-
+    const grayCancel=document.querySelectorAll('.gray');
+    const bluevioletCancel=document.querySelectorAll('.violet');
     const deleteList=document.querySelectorAll('.task img');
     deleteList.forEach(element=>{
-       /*  element.addEventListener('mouseover',function(e){
-            e.target.style.fill='#833AE0';
+        element.addEventListener('mouseover',function(){
+            grayCancel.forEach(e=>{
+                e.style.display='none';
+            })
+            bluevioletCancel.forEach(el=>{
+                el.style.display='block';
+            })
+
         })
-        element.addEventListener('mouseout',function(e){
-            e.target.style.fill='none';
-        }) */
+        element.addEventListener('mouseout',function(){
+            grayCancel.forEach(e=>{
+                e.style.display='inline';
+            })
+            bluevioletCancel.forEach(el=>{
+                el.style.display='none';
+            })
+        })
         element.addEventListener('click', function(e){
             
             e.target.parentElement.remove();
@@ -66,3 +79,20 @@ function add(){
 inputImg.addEventListener('click', function(){
     input.value='';
 })
+
+sortIcon.addEventListener('click', sort);
+
+function sort(){
+    const sortIcon1=document.querySelector('.sort-icon svg:first-child');
+    const sortIcon2=document.querySelector('.sort-icon svg:last-child');
+    const taskList=document.querySelectorAll('.task');
+    let arr=[...taskList]
+    sortedByIndex=[...arr].reverse();
+    toDoList.replaceChildren(...taskList, ...sortedByIndex)
+    if(getComputedStyle(sortIcon1).display==='inline'){
+        sortIcon2.style.display='inline'
+        sortIcon1.style.display='none';
+    }else{
+        alert('back')
+    }
+}

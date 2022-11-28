@@ -31,8 +31,12 @@ h3 {
     text-align: right;
     margin-bottom:12px;
 }
-.sort-icon svg{
+.sort-icon svg:first-child,
+.sort-icon svg:last-child{
     cursor: pointer;
+}
+.sort-icon svg:last-child{
+    display: none;
 }
 .sort-icon svg:hover *{
     fill:black;
@@ -121,3 +125,4 @@ input{
 {
     display: none;
 }
+
