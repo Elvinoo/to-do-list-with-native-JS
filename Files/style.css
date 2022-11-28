@@ -31,8 +31,15 @@ h3 {
     text-align: right;
     margin-bottom:12px;
 }
-.sort-icon img{
+.sort-icon svg:first-child,
+.sort-icon svg:last-child{
     cursor: pointer;
+}
+.sort-icon svg:last-child{
+    display: none;
+}
+.sort-icon svg:hover *{
+    fill:black;
 }
 
 .to-do-list {
@@ -49,6 +56,7 @@ h3 {
 .to-do-list .task {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .plus {
@@ -101,11 +109,14 @@ input{
     padding-left:10px;
     
 }
-.task-input img{
+.task-input svg{
     position: absolute;
     right: 30px;
     top:10px;
     cursor: pointer;
+}
+.task-input svg:hover *{
+    fill:#833AE0;
 }
 
 .arrow-up-gray,
@@ -114,3 +125,4 @@ input{
 {
     display: none;
 }
+
