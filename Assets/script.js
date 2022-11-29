@@ -1,5 +1,4 @@
 const toDoList = document.querySelector('.to-do-list');
-
 const input = document.querySelector('input');
 const inputImg = document.querySelector('.task-input svg');
 const addButton = document.querySelector('.addToListButton');
