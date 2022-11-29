@@ -122,4 +122,9 @@ input{
 {
     display: none;
 }
-
+.sort-icon svg:last-child{
+    display:none;
+}
+p{
+    width:200px;
+}
