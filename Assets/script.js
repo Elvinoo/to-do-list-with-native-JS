@@ -18,10 +18,10 @@ function add() {
         newTask.className = 'task';
         newTask.innerHTML =
             `<p contentEditable="true" class="tasks"> ${input.value}</p>
-    <img class="gray" src="/files/delete-icon.svg" alt="cancel">
+    <img class="gray" src="./Assets/delete-icon.svg" alt="cancel">
     
 `
-        
+
         toDoList.style.display = 'block'
         toDoList.appendChild(newTask);
         input.value = '';
@@ -35,10 +35,10 @@ function add() {
         deleteList.forEach(element => {
             grayCancel.forEach((e) => {
                 e.addEventListener('mouseover', function (event) {
-                    event.target.setAttribute('src', '/files/cancel-blueviolet.svg');
+                    event.target.setAttribute('src', './Assets/cancel-blueviolet.svg');
                 })
                 e.addEventListener('mouseout', function (event) {
-                    event.target.setAttribute('src', '/files/delete-icon.svg')
+                    event.target.setAttribute('src', './Assets/delete-icon.svg')
                 })
             })
             element.addEventListener('click', function (e) {
@@ -62,19 +62,19 @@ inputImg.addEventListener('click', function () {
 })
 
 const arrowDown = document.querySelector('.sort-icon svg:first-child');
-const arrowUp= document.querySelector('.sort-icon svg:last-child')
-arrowDown.addEventListener('click', function(){
-    this.style.display='none';
-    arrowUp.style.display='inline';
-    const tasks=[...document.querySelectorAll('.task')];
-    tasks.sort((a,b)=>{return parseInt(b.innerText)-parseInt(a.innerText)});
-    toDoList.replaceChildren(...toDoList.children,...tasks)
+const arrowUp = document.querySelector('.sort-icon svg:last-child')
+arrowDown.addEventListener('click', function () {
+    this.style.display = 'none';
+    arrowUp.style.display = 'inline';
+    const tasks = [...document.querySelectorAll('.task')];
+    tasks.sort((a, b) => { return parseInt(b.innerText) - parseInt(a.innerText) });
+    toDoList.replaceChildren(...toDoList.children, ...tasks)
 });
-arrowUp.addEventListener('click',function(){
-    this.style.display='none';
-    arrowDown.style.display='inline';
-    const tasks=[...document.querySelectorAll('.task')];
-    tasks.sort((a,b)=>{return parseInt(a.innerText)-parseInt(b.innerText)});
-    toDoList.replaceChildren(...toDoList.children,...tasks)
+arrowUp.addEventListener('click', function () {
+    this.style.display = 'none';
+    arrowDown.style.display = 'inline';
+    const tasks = [...document.querySelectorAll('.task')];
+    tasks.sort((a, b) => { return parseInt(a.innerText) - parseInt(b.innerText) });
+    toDoList.replaceChildren(...toDoList.children, ...tasks)
 })
 
